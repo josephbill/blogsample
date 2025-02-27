@@ -143,3 +143,12 @@ variables store data (what is the data types?)
 conditional statements allow us to control the flow of programs based of conditions 
 
 1. if statement (else if and else )
+
+
+### Functions 
+- reusable blocks of code , that can take input , process it and return a desired output. 
+
+1. Function declarations : when you need that can be hoisted 
+what is hoisting ? a function is accessible before its declaration in code 
+2. Function expressions : variable values are actual functions 
+When we need a function that should not be hoisted 
