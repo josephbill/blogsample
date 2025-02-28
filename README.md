@@ -152,3 +152,64 @@ conditional statements allow us to control the flow of programs based of conditi
 what is hoisting ? a function is accessible before its declaration in code 
 2. Function expressions : variable values are actual functions 
 When we need a function that should not be hoisted 
+3. Arrow functions 
+
+### DATA STRUCTURES 
+DS, is a way of organizing , storing and managing data.
+
+1. Primitive data structures : data types resulting to single values 
+let name = "Joseph"
+name.toUpperCase()
+let x = 80 
+let y = true
+let z; 
+let a = null
+Non-primitives 
+2. Linear data structures :: collection of items :: ordered collection of items 
+store elements sequentially 
+- Arrays : collections of elements stored in an indexed order 
+when we need fast access to the elements in the collection via the index 
+- Linked Lists 
+- Stacks 
+- Queues 
+3. Non-Linear data structures :: storage of data is complex, 
+- Trees : DOM in webpages 
+- Graphs : 
+- Hash Tables 
+
+## Objects 
+Objects is a collection of key and pair values normally referencing a single entity. 
+
+
+#### DOM : Document Object Model 
+This is a programming interface for web documents 
+Represents the structure of our HTML as a tree of objects 
+Any element within a html docs is called a node 
+       html
+
+head        body 
+        header  main footer 
+                article
+
+DOM allows JS to manipulate(create elements) , modify and update the content , structure and styling of a webpage 
+<div>
+<p>This is a paragraph</p>
+</div>
+
+
+### KEY CONCEPTS IN DOM 
+1. Understand the DOM tree Structure 
+- Document Node : !Doctype - represents the whole tree as a HTML document 
+- Element Nodes : HTML elements 
+- Text Nodes : actual text inside an element /content 
+- Attribute Nodes : represents attributes used in the elements id, class , src, alt 
+- comment nodes : comments 
+2. Accessing Elements in DOM Javascript 
+- document.getElementById("id of the element")
+- document.getElementsByClassName("class name of the element") # selects all elements with the classname 
+- document.getElementsbyTagName("p") # selects all the tags that match/ that do not have a class or id 
+- document.querySelector("class name of the element/ tag name") # select the first element in the collection
+- document.querySelectorAll("class name / tag name") # selects all elements matching the query.
+3. Creating and Removing Elements :: create/ remove HTML elements dynamically 
+4. Modifying Elements :: change text, attributes , styles dynamically 
+5. Event handling :: respond to users events i.e. click , submit , mouseover , hover , scroll , page load 

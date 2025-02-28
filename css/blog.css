@@ -95,3 +95,10 @@ footer {
     padding: 10px;
     font-size: 14px;
 }
+
+/* dynamic style */
+.classdynamic {
+    color: green;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding: 10px;
+}

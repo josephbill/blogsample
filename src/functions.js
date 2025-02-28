@@ -37,3 +37,7 @@ console.log(multiply(5,5))
 
 const division = (a,b) => a / b 
 console.log(division(10,5))
+
+// immediately invoked functions 
+// generator functions 
+// higher order functions 

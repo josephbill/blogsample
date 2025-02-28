@@ -4,16 +4,16 @@
 // let changing_variable = "This is supposed to change"
 // // functions : block of code to execute a specific task 
 // // syntax for writing a function will look like this 
-// function printGlobalScope() {
-//     changing_variable = 10
-//     console.log("Inside the function " , global_scope)
-//     console.log("Changing variable " , changing_variable)
-//     // the code in here are only related to the function
+function printGlobalScope() {
+    changing_variable = 10
+    console.log("Inside the function " , global_scope)
+    console.log("Changing variable " , changing_variable)
+    // the code in here are only related to the function
 
-// }
+}
 
 // // invoke/call function  
-// printGlobalScope()
+printGlobalScope()
 // console.log(global_scope)
 // console.log(changing_variable)
 
