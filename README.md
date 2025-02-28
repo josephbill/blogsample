@@ -213,3 +213,11 @@ DOM allows JS to manipulate(create elements) , modify and update the content , s
 3. Creating and Removing Elements :: create/ remove HTML elements dynamically 
 4. Modifying Elements :: change text, attributes , styles dynamically 
 5. Event handling :: respond to users events i.e. click , submit , mouseover , hover , scroll , page load 
+
+### DEPLOYING TO GH PAGES 
+1. push work to repository 
+2. Have an idea of the working branch 
+3. go to repo on github 
+4. go to settings 
+5. Go to the menu section code and automation and select pages.
+6. give active branch and save to deploy
