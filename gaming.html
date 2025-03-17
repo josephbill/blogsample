@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Inventory & Character Manager</title>
+</head>
+<body>
+    <h2>Character Progression</h2>
+    <p>Name: <span id="charName">Eldrin the Mage</span></p>
+    <p>Level: <span id="charLevel">1</span></p>
+    <p>XP: <span id="charXP">0</span></p>
+
+    <input type="number" id="xpInput" placeholder="Enter XP to gain">
+    <button onclick="gainExperience()">Gain XP</button>
+
+    <h2>Inventory Management</h2>
+    <input type="text" id="itemName" placeholder="Item Name">
+    <input type="text" id="itemType" placeholder="Item Type">
+    <input type="number" id="itemQuantity" placeholder="Quantity">
+    <button onclick="addItem()">Add Item</button>
+
+    <h3>Inventory List</h3>
+    <ul id="inventoryList"></ul>
+
+    <script>
+        const character = {
+            name: "Eldrin the Mage",
+            level: 1,
+            experience: 0,
+            inventory: [] // Array to hold item objects
+        };
+
+        function gainExperience() {
+            let xpInput = document.getElementById("xpInput").value;
+            let xp = parseInt(xpInput, 10);
+
+            if (!isNaN(xp) && xp > 0) {
+                character.experience += xp;
+                if (character.experience >= 100) {
+                    character.level++;
+                    character.experience = 0;
+                    alert(`${character.name} leveled up! Now at level ${character.level}.`);
+                }
+                updateCharacterDisplay();
+            }
+        }
+
+        function addItem() {
+            let name = document.getElementById("itemName").value;
+            let type = document.getElementById("itemType").value;
+            let quantity = parseInt(document.getElementById("itemQuantity").value, 10);
+
+            if (name && type && !isNaN(quantity) && quantity > 0) {
+                let newItem = { name, type, quantity };
+                character.inventory.push(newItem);
+                updateInventoryDisplay();
+            }
+        }
+
+        function updateCharacterDisplay() {
+            document.getElementById("charLevel").textContent = character.level;
+            document.getElementById("charXP").textContent = character.experience;
+        }
+
+        function updateInventoryDisplay() {
+            let inventoryList = document.getElementById("inventoryList");
+            inventoryList.innerHTML = "";
+            character.inventory.forEach(item => {
+                let li = document.createElement("li");
+                li.textContent = `${item.name} - Type: ${item.type}, Quantity: ${item.quantity}`;
+                inventoryList.appendChild(li);
+            });
+        }
+    </script>
+</body>
+</html>

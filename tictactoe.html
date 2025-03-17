@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        .board { display: grid; grid-template-columns: repeat(3, 100px); gap: 5px; justify-content: center; }
+        .cell { width: 100px; height: 100px; font-size: 2em; display: flex; align-items: center; justify-content: center; background: #f0f0f0; cursor: pointer; border: 1px solid #333; }
+        .cell:hover { background: #ddd; }
+        .winner { font-size: 1.5em; color: green; margin-top: 10px; }
+    </style>
+</head>
+<body>
+
+    <h1>Tic Tac Toe</h1>
+    <div class="board" id="board"></div>
+    <p class="winner" id="winner"></p>
+    <button onclick="resetGame()">Restart</button>
+
+    <script>
+        // Game State (Using Objects & Arrays)
+        const gameState = {
+            board: [
+                ["", "", ""],
+                ["", "", ""],
+                ["", "", ""]
+            ],
+            currentPlayer: "X",
+            gameOver: false
+        };
+
+        // Function to create the board UI
+        function createBoard() {
+            const boardElement = document.getElementById("board");
+            boardElement.innerHTML = ""; // Clear board
+
+            gameState.board.forEach((row, rowIndex) => {
+                row.forEach((cell, colIndex) => {
+                    const cellElement = document.createElement("div");
+                    cellElement.classList.add("cell");
+                    cellElement.textContent = cell;
+                    cellElement.addEventListener("click", () => makeMove(rowIndex, colIndex));
+                    boardElement.appendChild(cellElement);
+                });
+            });
+        }
+
+        // Handle a move when a player clicks a cell
+        function makeMove(row, col) {
+            if (gameState.board[row][col] === "" && !gameState.gameOver) {
+                gameState.board[row][col] = gameState.currentPlayer;
+                checkWinner();
+                gameState.currentPlayer = gameState.currentPlayer === "X" ? "O" : "X";
+                createBoard();
+            }
+        }
+
+        // Check if there's a winner
+        function checkWinner() {
+            const board = gameState.board;
+            const winnerDisplay = document.getElementById("winner");
+
+            const winningCombinations = [
+                // Rows
+                [ [0, 0], [0, 1], [0, 2] ],
+                [ [1, 0], [1, 1], [1, 2] ],
+                [ [2, 0], [2, 1], [2, 2] ],
+                // Columns
+                [ [0, 0], [1, 0], [2, 0] ],
+                [ [0, 1], [1, 1], [2, 1] ],
+                [ [0, 2], [1, 2], [2, 2] ],
+                // Diagonals
+                [ [0, 0], [1, 1], [2, 2] ],
+                [ [0, 2], [1, 1], [2, 0] ]
+            ];
+
+            for (const combination of winningCombinations) {
+                const [a, b, c] = combination;
+                if (
+                    board[a[0]][a[1]] !== "" &&
+                    board[a[0]][a[1]] === board[b[0]][b[1]] &&
+                    board[a[0]][a[1]] === board[c[0]][c[1]]
+                ) {
+                    gameState.gameOver = true;
+                    winnerDisplay.textContent = `${board[a[0]][a[1]]} Wins! 🎉`;
+                    return;
+                }
+            }
+
+            // Check for a draw
+            if (board.flat().every(cell => cell !== "")) {
+                gameState.gameOver = true;
+                winnerDisplay.textContent = "It's a Draw! 🤝";
+            }
+        }
+
+        // Reset the game
+        function resetGame() {
+            gameState.board = [
+                ["", "", ""],
+                ["", "", ""],
+                ["", "", ""]
+            ];
+            gameState.currentPlayer = "X";
+            gameState.gameOver = false;
+            document.getElementById("winner").textContent = "";
+            createBoard();
+        }
+
+        // Initialize game
+        createBoard();
+    </script>
+
+</body>
+</html>

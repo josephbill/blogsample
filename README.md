@@ -221,3 +221,39 @@ DOM allows JS to manipulate(create elements) , modify and update the content , s
 4. go to settings 
 5. Go to the menu section code and automation and select pages.
 6. give active branch and save to deploy
+
+### Structuring of the readme 
+
+### Author Name 
+Joseph Mbugua 
+
+### Running Instructions 
+1. https://josephbill.github.io/blogsample/
+2. npm install 
+/// instructions to run the project 
+
+### Concepts 
+1. HtmL 
+2. Css 
+3. Bootstrap 
+4. Javascript 
+
+### AOB 
+kfldfldklfdlfkldfkldkfdlkf 
+- media query : responsiveness set at width 780px;
+
+
+### BREAK OUT ROOM SESSION QUESTION 
+write a function called FizzBuzz that prints the numbers 1 to 10 based off the following conditions 
+
+1. If a number is divisible 3 , print 'Fizz' instead of the number 
+2. If a number is divisible by 5 , print 'buzz' instead of the number 
+3. If a number is divisible by both 3 and 5 , print "Fizzbuzz' instead of the number 
+4. Otherwise print the number itself 
+
+1
+2
+Fizz 
+4
+Buzz
+6 ... 10 
