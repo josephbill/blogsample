@@ -257,3 +257,54 @@ Fizz
 4
 Buzz
 6 ... 10 
+
+### COMMUNICATING WITH THE SERVER 
+frontend(client, HTML , CSS , JS DOM, ReactJS)  => middlewares(a function or a set of functions that sits btw the client REQUEST and the servers response) => backend(server end (databases, server scripts(python, nodejs + express ))) 
+
+### APIS (APPLICATION PROGRAMMING INTERFACE)
+Is a set of rules that allows different software apps to communicate with each other
+
+### Think of an API as a waiter in a restaurant
+1. You(Frontend/client) make an order(request)
+2. The waiter(API) takes the request to the kitchen(server/backend)
+3. The kitchen(server) prepares the food(process the request)
+4. The waiter(API) brings back the meal(response) to you
+
+### TYPES OF APIS
+1. REST API => Uses HTTP methods ::
+  - GET :: use this to request data from servers (default)
+  - POST :: use this to save or send data to servers
+  - PUT :: use this to update on data on servers
+  - PATCH :: use this to update only a section of your data
+  - DELETE :: use this to remove data from your servers
+2. GraphQL API => Allows clients/frontend to access data only when needed
+3. SOAP API => Uses XML methods / older (secure)
+4. WebSocket API => Enable real time data transfer (chat applications)
+
+### JSON(JAVASCRIPT OBJECT NOTATION)
+- lightweight data format used for exchanging and storing records. 
+- It is human readable 
+- .json file / json-server 
+
+### JSON syntax 
+Json is written as key-value pairs 
+  = keys are always strings 
+  = values can be of any other data type 
+
+example 
+JSON object 
+{
+  "name": "John Doe",
+  "age": 30,
+  "isStudent": false,
+  "skills": ["JavaScript", "Python", "React"],
+  "address": {
+    "city": "New York",
+    "zip": "10001"
+  }
+}
+JSON Array 
+[
+   {},
+   {},
+]
